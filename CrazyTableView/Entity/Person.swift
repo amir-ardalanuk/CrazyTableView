@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Person {
-    let name: String
-    let type: PersonType
+protocol Person {
+    var name: String{get get}
+    var color: String { get set }
 }
