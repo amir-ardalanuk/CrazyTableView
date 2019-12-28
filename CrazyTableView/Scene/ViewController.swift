@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.datasource.count
+        return viewModel.datasource.count
     }
     
     func tableView(_ tableView: UITableView,
@@ -40,9 +40,7 @@ extension ViewController: UITableViewDataSource {
         
         let model = viewModel.datasource[indexPath.row]
         
-        return homeCeller.getCell(tableView,
-                                  at: indexPath,
-                                  person: model)
+        return model.mappToCell(tableView, at: indexPath)
     }
 }
 

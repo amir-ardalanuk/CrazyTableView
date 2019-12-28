@@ -8,18 +8,15 @@
 
 import UIKit
 
-struct MasterRule: CellRuleable {
+struct MasterRule: PersonCellModel {
+    var person: Person
     
-    func isMatch(personType: PersonType) -> Bool {
-        return personType == .master
-    }
-    
-    func getCell(_ tableView: UITableView,
-                 at indexPath: IndexPath,
-                 person: Person) -> UITableViewCell {
-        
+    func mappToCell(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell: MasterCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.config(person: person)
         return cell
     }
+
+    typealias T = Master
+    
 }

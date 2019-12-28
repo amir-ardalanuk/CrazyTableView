@@ -8,18 +8,13 @@
 
 import UIKit
 
-struct StudentRule: CellRuleable {
+struct StudentRule: PersonCellModel {
+    var person: Person
     
-    func isMatch(personType: PersonType) -> Bool {
-        return personType == .student
-    }
     
-    func getCell(_ tableView: UITableView,
-                 at indexPath: IndexPath,
-                 person: Person) -> UITableViewCell {
-        
+    func mappToCell(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell: StudentCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.config(person: person)
-        return cell 
+        return cell
     }
 }

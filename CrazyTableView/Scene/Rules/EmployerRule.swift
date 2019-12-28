@@ -8,18 +8,14 @@
 
 import UIKit
 
-struct EmployerRule: CellRuleable {
+struct EmployerRule: PersonCellModel {
+    var person: Person
     
-    func isMatch(personType: PersonType) -> Bool {
-        return personType == .employer
-    }
-    
-    func getCell(_ tableView: UITableView,
-                 at indexPath: IndexPath,
-                 person: Person) -> UITableViewCell {
-        
+    func mappToCell(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell: EmployerCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.config(person: person)
         return cell
     }
+
+    
 }

@@ -10,15 +10,15 @@ import Foundation
 
 struct MainViewModel {
     
-    var datasource: [Person] {
+    var datasource: [PersonCellModel] {
         return [
-            Person(name: "Farhad", type: .master),
-            Person(name: "Sina", type: .student),
-            Person(name: "Amir", type: .master),
-            Person(name: "Nazi", type: .employer),
-            Person(name: "Mohammad", type: .student),
-            Person(name: "Mansor", type: .employer),
-            Person(name: "Bahar", type: .master),
+            MasterRule(person:Master(name: "Farhad")),
+            StudentRule(person:Student(name: "Sina")),
+            MasterRule(person: Master(name: "Amir")) ,
+            EmployerRule(person:Employer(name: "Nazi")),
+            StudentRule(person: Student(name: "Mohammad")),
+            EmployerRule(person: Employer(name: "Mansor")),
+            MasterRule(person:  Master(name: "Bahar")),
         ]
     }
 }

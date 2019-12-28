@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Person {
-    var name: String{get get}
-    var color: String { get set }
+    var name: String{get set}
+    var typeName : String{get}
+    var colorData: Data { get }
 }

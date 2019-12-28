@@ -15,6 +15,6 @@ class StudentCell: UITableViewCell, Reusable {
 
     func config(person: Person) {
         title?.text = person.name
-        subTitle?.text = person.type.value
+        subTitle?.text = person.typeName
     }
 }

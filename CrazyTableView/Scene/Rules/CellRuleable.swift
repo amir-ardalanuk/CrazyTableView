@@ -8,11 +8,9 @@
 
 import UIKit
 
-protocol CellRuleable {
+protocol PersonCellModel  {
     
-    func isMatch(personType: PersonType) -> Bool
-    
-    func getCell(_ tableView: UITableView,
-                 at indexPath: IndexPath,
-                 person: Person) -> UITableViewCell
+    func mappToCell(_ tableView: UITableView,
+                    at indexPath: IndexPath)->UITableViewCell
+    var person : Person {get set}
 }
